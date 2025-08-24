@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kit 2x Whey Pro 1kg Max Titanium - Proteína para Seus Treinos!</title>
+    <meta name="description" content="Compre o Kit 2x Whey Pro da Max Titanium! Proteína de alto valor biológico para ganho de massa muscular, recuperação e performance. Envio rápido e seguro!" />
+    
+    <link rel="icon" href="favicon.png" type="image/png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ================================================
+           1. RESET E VARIÁVEIS GLOBAIS
+           ================================================ */
+        :root {
+            --c-bg: #000000;
+            --c-bg-panel: #111112;
+            --c-fg: #f5f5f7;
+            --c-fg-subtle: #a1a1a6;
+            --c-border: rgba(255, 255, 255, 0.1);
+            /* Paleta de cores CORRIGIDA para usar apenas laranja */
+            --c-brand: #ff9900; /* Laranja vibrante principal */
+            --c-brand-light: #ffac33; /* Laranja mais claro para hover */
+            --maxw: 1024px;
+            --radius: 28px;
+            --nav-h: 56px;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-fg);
+            font-family: var(--font-main);
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+        img, video { display: block; max-width: 100%; height: auto; }
+
+        /* ================================================
+           2. NAVEGAÇÃO E ELEMENTOS DE UI
+           ================================================ */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            height: var(--nav-h);
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--c-border);
+        }
+        .nav-inner {
+            max-width: var(--maxw); height: 100%; margin: 0 auto;
+            padding: 0 24px; display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav .brand { font-weight: 600; font-size: 17px; }
+        .btn {
+            appearance: none; border: none; cursor: pointer;
+            background: var(--c-brand); color: #000;
+            padding: 10px 20px; border-radius: 999px;
+            font-size: 15px; font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.2);
+        }
+        .btn:hover {
+            transform: scale(1.05) translateY(-1px);
+            box-shadow: 0 8px 25px rgba(255, 153, 0, 0.3);
+            background: var(--c-brand-light);
+        }
+        .section-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800; letter-spacing: -0.04em;
+            text-align: center; max-width: 800px;
+            margin: 0 auto 50px auto;
+            text-wrap: balance;
+        }
+        .section-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-weight: 500;
+            color: var(--c-fg-subtle);
+            text-align: center;
+            max-width: 700px;
+            margin: -30px auto 50px auto;
+            text-wrap: balance;
+        }
+
+        /* ================================================
+           3. SEÇÃO HERO
+           ================================================ */
+        .hero {
+            height: 100svh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 24px;
+        }
+        .hero .hero-video-bg {
+            position: absolute; top: 50%; left: 50%;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            filter: brightness(0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: hero-fade-in 1.5s ease-out forwards;
+        }
+        @keyframes hero-fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-title {
+            font-size: clamp(3rem, 10vw, 6.5rem);
+            font-weight: 800; letter-spacing: -0.05em; line-height: 1; margin-bottom: 16px;
+        }
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 4vw, 1.75rem); color: var(--c-fg-subtle); max-width: 600px; margin: 0 auto 32px; text-wrap: balance;
+        }
+        /* CSS para o botão de controle de som */
+        .hero-sound-control {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .hero-sound-control:hover {
+            background: rgba(0, 0, 0, 0.7);
+            transform: scale(1.1);
+        }
+        .hero-sound-control svg { width: 24px; height: 24px; color: var(--c-fg); }
+        .hidden { display: none; }
+        
+        /* ================================================
+           4. SEÇÃO DE CONFIANÇA (Feature Grid)
+           ================================================ */
+        .features { padding: 90px 24px; background: var(--c-bg-panel); }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: var(--maxw);
+            margin: 0 auto;
+        }
+        .feature-item { text-align: left; }
+        .feature-item svg { width: 48px; height: 48px; margin-bottom: 16px; color: var(--c-brand); }
+        .feature-item h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 8px; }
+        .feature-item p { font-size: 1rem; color: var(--c-fg-subtle); line-height: 1.6; }
+
+        /* ================================================
+           5. SEÇÃO SABORES
+           ================================================ */
+        .flavors { padding: 90px 0; overflow-x: hidden; }
+        .flavor-scroller-wrapper { max-width: var(--maxw); margin: 0 auto; }
+        .flavor-scroller {
+            display: flex; justify-content: flex-start; gap: 30px; padding: 20px 24px;
+            overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+        }
+        @media (min-width: 1020px) {
+            .flavor-scroller { flex-wrap: wrap; justify-content: center; gap: 40px; overflow-x: hidden; }
+        }
+        .flavor-scroller::-webkit-scrollbar { height: 8px; }
+        .flavor-scroller::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 4px; }
+        .flavor-scroller::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
+        .flavor-scroller::-webkit-scrollbar-thumb:hover { background: #666; }
+        .flavor-card {
+            flex: 0 0 clamp(300px, 80vw, 380px); scroll-snap-align: center;
+            background: var(--c-bg-panel); border-radius: var(--radius); padding: 40px 32px;
+            border: 1px solid var(--c-border); text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .flavor-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .flavor-card img { width: 100%; height: 280px; object-fit: contain; margin: 0 auto 24px auto; }
+        .flavor-card h3 { font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
+        .flavor-card p { color: var(--c-fg-subtle); margin-bottom: 24px; font-size: 1rem; line-height: 1.6; }
+
+        /* ================================================
+           6. SEÇÕES DE BENEFÍCIOS (Texto e Imagem)
+           ================================================ */
+        .specs { padding: 50px 24px; }
+        .specs-grid {
+            max-width: var(--maxw); margin: 60px auto;
+            display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center;
+        }
+        @media (min-width: 768px) {
+            .specs-grid { grid-template-columns: repeat(2, 1fr); gap: 80px; }
+            .specs-grid.reversed > .specs-text { order: 2; }
+        }
+        .specs-text { text-align: center; }
+        @media (min-width: 768px) { .specs-text { text-align: left; } }
+        .specs-text h3 {
+            font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 16px; text-wrap: balance;
+        }
+        .specs-text p {
+            font-size: 1.125rem; color: var(--c-fg-subtle); line-height: 1.7; max-width: 450px; margin: 0 auto;
+        }
+        @media (min-width: 768px) { .specs-text p { margin: 0; } }
+        .specs-image { overflow: hidden; border-radius: var(--radius); box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+        .specs-image img { width: 100%; transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .specs-image:hover img { transform: scale(1.03); }
+        
+        /* ================================================
+           7. SEÇÃO DE FAQ
+           ================================================ */
+        .faq { padding: 90px 24px; }
+        .faq-grid {
+            max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 32px;
+        }
+        @media (min-width: 768px) {
+            .faq-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+        }
+        .faq-item h4 { font-size: 1.25rem; font-weight: 600; margin-bottom: 8px; color: var(--c-brand); }
+        .faq-item p { font-size: 1rem; color: var(--c-fg-subtle); line-height: 1.6; }
+
+        /* ================================================
+           8. SEÇÃO DE IMPACTO FINAL
+           ================================================ */
+        .final-pitch {
+            padding: 90px 24px; position: relative; min-height: 80svh;
+            display: grid; place-items: center; text-align: center;
+            background-color: var(--c-bg-panel); overflow: hidden;
+        }
+        .final-pitch-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.2; }
+        .final-pitch-content { position: relative; }
+        .final-pitch-content h2 {
+            font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 800; letter-spacing: -0.04em; margin-bottom: 16px;
+        }
+        .final-pitch-content p {
+            font-size: clamp(1.25rem, 3vw, 1.75rem); color: var(--c-fg-subtle); max-width: 650px; margin: 0 auto; text-wrap: balance;
+        }
+
+        /* ================================================
+           9. SEÇÃO CTA E FOOTER
+           ================================================ */
+        .cta { padding: 90px 24px; text-align: center; }
+        footer {
+            background: var(--c-bg-panel); padding: 60px 24px 40px;
+            color: var(--c-fg-subtle); font-size: 12px; text-align: center;
+        }
+        .footer-content { max-width: var(--maxw); margin: 0 auto; }
+        .footer-top { border-bottom: 1px solid var(--c-border); padding-bottom: 20px; margin-bottom: 20px; }
+        .footer-bottom { padding-top: 20px; border-top: 1px solid var(--c-border); }
+
+        /* ================================================
+           10. AJUSTES PARA DISPOSITIVOS MÓVEIS
+           ================================================ */
+        @media (max-width: 768px) {
+            .section-title { margin-bottom: 40px; }
+            .section-subtitle { margin: -20px auto 40px auto; }
+            .features, .final-pitch, .cta, .faq { padding: 60px 24px; }
+            .flavors { padding: 60px 0; }
+            .specs { padding: 40px 24px; }
+            .specs-grid { margin: 40px auto; }
+        }
+
+        /* ================================================
+           11. ANIMAÇÕES DE REVELAÇÃO
+           ================================================ */
+        .reveal {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="brand">Whey Pro Max Titanium</div>
+            <a href="#cta-final" class="btn">Comprar Kit</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <video class="hero-video-bg" autoplay loop muted playsinline poster="https://via.placeholder.com/1920x1080/000000/FFFFFF?text=Fundo+de+Treino">
+                <source src="video01.mp4" type="video/mp4">
+            </video>
+            
+            <button class="hero-sound-control" aria-label="Ativar som do vídeo">
+                <svg class="icon-sound-off" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+                </svg>
+                <svg class="icon-sound-on hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+                </svg>
+            </button>
+            
+            <div class="hero-content reveal">
+                <h1 class="hero-title">Dupla Potência. Máximos Resultados.</h1>
+                <p class="hero-subtitle">O Kit 2x Whey Pro da Max Titanium oferece a proteína de alto valor biológico que você precisa para ganho de massa, recuperação e performance.</p>
+                <a href="#cta-final" class="btn">Ver Oferta</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-grid">
+                <div class="feature-item reveal">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <h3>Compra 100% Assegurada</h3>
+                    <p>Sua compra é garantida. Todos os produtos são 100% originais, lacrados, dentro da validade e com Nota Fiscal.</p>
+                </div>
+                <div class="feature-item reveal" style="transition-delay: 0.1s;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5v-1.875a3.375 3.375 0 003.375-3.375h1.5a1.125 1.125 0 011.125 1.125v-1.5a3.375 3.375 0 00-3.375-3.375H3.375m15.75 9V14.25M3.375 12h17.25" /></svg>
+                    <h3>Envio Rápido e Seguro</h3>
+                    <p>Despachamos seu pedido em até 24h úteis. Receba seu kit rapidamente no conforto da sua casa.</p>
+                </div>
+                <div class="feature-item reveal" style="transition-delay: 0.2s;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" /></svg>
+                    <h3>Suporte Dedicado</h3>
+                    <p>Temos uma equipe de atendimento sempre disponível no chat para tirar suas dúvidas e te ajudar no que for preciso.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="flavors">
+            <h2 class="section-title reveal">Escolha seu sabor favorito.</h2>
+            <div class="flavor-scroller-wrapper">
+                <div class="flavor-scroller">
+                    <article class="flavor-card reveal">
+                        <img src="https://via.placeholder.com/400x400/333333/FFFFFF?text=Whey+Chocolate" alt="Pote de Whey Pro sabor Chocolate">
+                        <h3>Chocolate</h3>
+                        <p>O clássico irresistível. Sabor intenso e cremoso para um pós-treino delicioso e eficaz.</p>
+                    </article>
+                    <article class="flavor-card reveal" style="transition-delay: 0.1s;">
+                        <img src="https://via.placeholder.com/400x400/333333/FFFFFF?text=Whey+Morango" alt="Pote de Whey Pro sabor Morango">
+                        <h3>Morango</h3>
+                        <p>Leve, refrescante e na medida certa de doçura. Perfeito para variar sua rotina de suplementação.</p>
+                    </article>
+                    <article class="flavor-card reveal" style="transition-delay: 0.2s;">
+                        <img src="https://via.placeholder.com/400x400/333333/FFFFFF?text=Whey+Baunilha" alt="Pote de Whey Pro sabor Baunilha">
+                        <h3>Baunilha</h3>
+                        <p>Versátil e suave. Ideal para misturar com frutas e criar shakes incríveis e nutritivos.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="specs">
+            <h2 class="section-title reveal">Benefícios para seus resultados.</h2>
+            <div class="specs-grid reveal">
+                <div class="specs-text">
+                    <h3>Alto Teor de Proteínas para Hipertrofia.</h3>
+                    <p>Formulado com Whey Protein Concentrado, fornece aminoácidos essenciais, incluindo BCAAs, fundamentais para o crescimento e manutenção da musculatura.</p>
+                </div>
+                <div class="specs-image">
+                    <img src="https://via.placeholder.com/600x400/111112/FFFFFF?text=Atleta+Treinando" alt="Gráfico de aminoácidos do Whey Pro">
+                </div>
+            </div>
+        </section>
+
+        <section class="specs">
+            <div class="specs-grid reversed reveal">
+                <div class="specs-text">
+                    <h3>Como Consumir: Rápido e Prático.</h3>
+                    <p>Misture 40g (4 colheres de sopa) em 200ml de água, leite ou sua bebida preferida. Consuma pós-treino ou conforme sua necessidade proteica. ⚠️ Atenção: Não acompanha scoop.</p>
+                </div>
+                <div class="specs-image">
+                    <img src="https://via.placeholder.com/600x400/111112/FFFFFF?text=Shake+Sendo+Preparado" alt="Pessoa preparando um shake de whey protein">
+                </div>
+            </div>
+        </section>
+        
+        <section class="faq">
+            <h2 class="section-title reveal">Perguntas Frequentes</h2>
+            <div class="faq-grid">
+                <article class="faq-item reveal">
+                    <h4>O que diferencia o Whey Pro Max Titanium?</h4>
+                    <p>É um Whey Protein Concentrado de alta qualidade, com excelente teor de proteínas e BCAAs, garantindo mais força, recuperação e crescimento muscular com ótimo custo-benefício.</p>
+                </article>
+                <article class="faq-item reveal">
+                    <h4>Tem glúten ou lactose?</h4>
+                    <p>Não contém glúten. Por ser derivado do leite, contém lactose, portanto não é indicado para intolerantes.</p>
+                </article>
+                <article class="faq-item reveal">
+                    <h4>Para quem é indicado?</h4>
+                    <p>Para atletas, praticantes de musculação e qualquer pessoa que busca aumentar a ingestão de proteínas, melhorar a recuperação e potencializar os ganhos de massa muscular.</p>
+                </article>
+                <article class="faq-item reveal">
+                    <h4>Por que escolher o KIT 2X Whey Pro?</h4>
+                    <p>É a escolha inteligente para quem faz uso contínuo. Você garante seu estoque de proteína de alta qualidade com um custo-benefício muito superior, economizando e mantendo o foco nos resultados.</p>
+                </article>
+            </div>
+        </section>
+        
+        <section class="final-pitch">
+            <img class="final-pitch-bg" src="https://via.placeholder.com/1920x1080/000000/FFFFFF?text=Fundo+de+Academia" alt="Interior de uma academia moderna">
+            <div class="final-pitch-content reveal">
+                <h2>Máxima Performance. Melhor Custo-Benefício.</h2>
+                <p>Se você busca hipertrofia, recuperação muscular e mais força nos treinos, o Kit 2x Whey Pro é a escolha certa para resultados expressivos!</p>
+            </div>
+        </section>
+
+        <section class="cta" id="cta-final">
+            <h2 class="section-title reveal">Garanta já o seu Kit!</h2>
+            <p class="section-subtitle reveal">Estoque garantido com a melhor proteína do mercado. Não deixe seus resultados para depois.</p>
+            <a href="#" class="btn reveal" data-open-checkout>Comprar Agora</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <p>Produto 100% original, lacrado e com nota fiscal. Envio imediato para todo o Brasil.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> Sua Loja de Suplementos. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script defer>
+        function initApp() {
+            // Ano no footer
+            const yearEl = document.getElementById('year');
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
+
+            // LÓGICA DE ANIMAÇÃO AO ROLAR A PÁGINA
+            const revealElements = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                revealElements.forEach(element => observer.observe(element));
+            } else {
+                revealElements.forEach(element => element.classList.add('is-visible'));
+            }
+
+            // LÓGICA DE CHECKOUT
+            const CHECKOUT_LINK = 'https://s.shopee.com.br/709x1fSLSK';
+            const checkoutButtons = document.querySelectorAll('[data-open-checkout]');
+            checkoutButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    window.open(CHECKOUT_LINK, '_blank');
+                });
+            });
+            if (!CHECKOUT_LINK || CHECKOUT_LINK.includes('s.shopee.com.br')) {
+                console.warn('⚠ ATENÇÃO: Substitua a constante CHECKOUT_LINK pelo seu link de pagamento.');
+            }
+
+            // LÓGICA DE CONTROLE DE SOM DO VÍDEO
+            const video = document.querySelector('.hero-video-bg');
+            const soundButton = document.querySelector('.hero-sound-control');
+            const iconSoundOn = document.querySelector('.icon-sound-on');
+            const iconSoundOff = document.querySelector('.icon-sound-off');
+
+            if (video && soundButton && iconSoundOn && iconSoundOff) {
+                soundButton.addEventListener('click', () => {
+                    video.muted = !video.muted; // Alterna o estado mudo
+                    if (video.muted) {
+                        iconSoundOn.classList.add('hidden');
+                        iconSoundOff.classList.remove('hidden');
+                        soundButton.setAttribute('aria-label', 'Ativar som do vídeo');
+                    } else {
+                        iconSoundOn.classList.remove('hidden');
+                        iconSoundOff.classList.add('hidden');
+                        soundButton.setAttribute('aria-label', 'Desativar som do vídeo');
+                    }
+                });
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', initApp);
+    </script>
+</body>
+</html>
