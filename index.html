@@ -22,7 +22,6 @@
             --c-fg: #f5f5f7;
             --c-fg-subtle: #a1a1a6;
             --c-border: rgba(255, 255, 255, 0.1);
-            /* Paleta de cores CORRIGIDA para usar apenas laranja */
             --c-brand: #ff9900; /* Laranja vibrante principal */
             --c-brand-light: #ffac33; /* Laranja mais claro para hover */
             --maxw: 1024px;
@@ -125,7 +124,6 @@
         .hero-subtitle {
             font-size: clamp(1.2rem, 4vw, 1.75rem); color: var(--c-fg-subtle); max-width: 600px; margin: 0 auto 32px; text-wrap: balance;
         }
-        /* CSS para o botão de controle de som */
         .hero-sound-control {
             position: absolute;
             bottom: 24px;
@@ -194,7 +192,7 @@
         .flavor-card p { color: var(--c-fg-subtle); margin-bottom: 24px; font-size: 1rem; line-height: 1.6; }
 
         /* ================================================
-           6. SEÇÕES DE BENEFÍCIOS (Texto e Imagem)
+           6. SEÇÕES DE BENEFÍCIOS (Texto e Mídia)
            ================================================ */
         .specs { padding: 50px 24px; }
         .specs-grid {
@@ -215,8 +213,8 @@
         }
         @media (min-width: 768px) { .specs-text p { margin: 0; } }
         .specs-image { overflow: hidden; border-radius: var(--radius); box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
-        .specs-image img { width: 100%; transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
-        .specs-image:hover img { transform: scale(1.03); }
+        /* O seletor .specs-image agora se aplica tanto a img quanto a video */
+        .specs-image video { width: 100%; }
         
         /* ================================================
            7. SEÇÃO DE FAQ
@@ -322,8 +320,8 @@
                 </div>
                 <div class="feature-item reveal" style="transition-delay: 0.1s;">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5v-1.875a3.375 3.375 0 003.375-3.375h1.5a1.125 1.125 0 011.125 1.125v-1.5a3.375 3.375 0 00-3.375-3.375H3.375m15.75 9V14.25M3.375 12h17.25" /></svg>
-                    <h3>Envio Rápido e Seguro</h3>
-                    <p>Despachamos seu pedido em até 24h úteis. Receba seu kit rapidamente no conforto da sua casa.</p>
+                    <h3>Entregamos no seu lar</h3>
+                    <p>Receba seu kit rapidamente no conforto da sua casa. Pague na ENTREGA</p>
                 </div>
                 <div class="feature-item reveal" style="transition-delay: 0.2s;">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" /></svg>
@@ -338,17 +336,17 @@
             <div class="flavor-scroller-wrapper">
                 <div class="flavor-scroller">
                     <article class="flavor-card reveal">
-                        <img src="https://via.placeholder.com/400x400/333333/FFFFFF?text=Whey+Chocolate" alt="Pote de Whey Pro sabor Chocolate">
+                        <img src="chocolate.png" alt="Pote de Whey Pro sabor Chocolate">
                         <h3>Chocolate</h3>
                         <p>O clássico irresistível. Sabor intenso e cremoso para um pós-treino delicioso e eficaz.</p>
                     </article>
                     <article class="flavor-card reveal" style="transition-delay: 0.1s;">
-                        <img src="https://via.placeholder.com/400x400/333333/FFFFFF?text=Whey+Morango" alt="Pote de Whey Pro sabor Morango">
+                        <img src="morango.png" alt="Pote de Whey Pro sabor Morango">
                         <h3>Morango</h3>
                         <p>Leve, refrescante e na medida certa de doçura. Perfeito para variar sua rotina de suplementação.</p>
                     </article>
                     <article class="flavor-card reveal" style="transition-delay: 0.2s;">
-                        <img src="https://via.placeholder.com/400x400/333333/FFFFFF?text=Whey+Baunilha" alt="Pote de Whey Pro sabor Baunilha">
+                        <img src="baunilha.png" alt="Pote de Whey Pro sabor Baunilha">
                         <h3>Baunilha</h3>
                         <p>Versátil e suave. Ideal para misturar com frutas e criar shakes incríveis e nutritivos.</p>
                     </article>
@@ -364,7 +362,10 @@
                     <p>Formulado com Whey Protein Concentrado, fornece aminoácidos essenciais, incluindo BCAAs, fundamentais para o crescimento e manutenção da musculatura.</p>
                 </div>
                 <div class="specs-image">
-                    <img src="https://via.placeholder.com/600x400/111112/FFFFFF?text=Atleta+Treinando" alt="Gráfico de aminoácidos do Whey Pro">
+                    <video autoplay loop muted playsinline>
+                        <source src="video02.mp4" type="video/mp4">
+                        Seu navegador não suporta o vídeo.
+                    </video>
                 </div>
             </div>
         </section>
@@ -376,7 +377,10 @@
                     <p>Misture 40g (4 colheres de sopa) em 200ml de água, leite ou sua bebida preferida. Consuma pós-treino ou conforme sua necessidade proteica. ⚠️ Atenção: Não acompanha scoop.</p>
                 </div>
                 <div class="specs-image">
-                    <img src="https://via.placeholder.com/600x400/111112/FFFFFF?text=Shake+Sendo+Preparado" alt="Pessoa preparando um shake de whey protein">
+                    <video autoplay loop muted playsinline>
+                        <source src="video03.mp4" type="video/mp4">
+                        Seu navegador não suporta o vídeo.
+                    </video>
                 </div>
             </div>
         </section>
@@ -404,7 +408,7 @@
         </section>
         
         <section class="final-pitch">
-            <img class="final-pitch-bg" src="https://via.placeholder.com/1920x1080/000000/FFFFFF?text=Fundo+de+Academia" alt="Interior de uma academia moderna">
+            <img class="final-pitch-bg" src="academia.jpg" alt="Interior de uma academia moderna">
             <div class="final-pitch-content reveal">
                 <h2>Máxima Performance. Melhor Custo-Benefício.</h2>
                 <p>Se você busca hipertrofia, recuperação muscular e mais força nos treinos, o Kit 2x Whey Pro é a escolha certa para resultados expressivos!</p>
@@ -421,10 +425,10 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-top">
-                <p>Produto 100% original, lacrado e com nota fiscal. Envio imediato para todo o Brasil.</p>
+                <p>Produto 100% original, lacrado e com nota fiscal. Envio imediato para toda Cianorte.</p>
             </div>
             <div class="footer-bottom">
-                <p>© <span id="year"></span> Sua Loja de Suplementos. Todos os direitos reservados.</p>
+                <p>© <span id="year"></span> CNPJ 54.021.893/0001-80 - ©️Kiibarato. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -454,7 +458,7 @@
             }
 
             // LÓGICA DE CHECKOUT
-            const CHECKOUT_LINK = 'https://s.shopee.com.br/709x1fSLSK';
+            const CHECKOUT_LINK = 'https://wa.me/5511942439819?text=%F0%9F%91%89%20Ol%C3%A1!%20Tudo%20bem%20com%20voc%C3%AA%3F%0AQual%20sabor%20combina%20mais%20com%20o%20seu%20momento%3A%20morango%2C%20baunilha%20ou%20chocolate%3F%20%F0%9F%8D%93%F0%9F%8D%A6%F0%9F%8D%AB%0AEscolha%20j%C3%A1%20e%20n%C3%B3s%20levamos%20rapidinho%20at%C3%A9%20a%20sua%20casa%20ou%20onde%20voc%C3%AA%20estiver!%20%F0%9F%9A%80%E2%9C%A8';
             const checkoutButtons = document.querySelectorAll('[data-open-checkout]');
             checkoutButtons.forEach(button => {
                 button.addEventListener('click', (event) => {
